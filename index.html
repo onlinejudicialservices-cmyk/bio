@@ -144,8 +144,8 @@
   }
   .t-ic svg{width:28px;height:28px}
   .t-title{font-family:var(--title);font-weight:800;font-size:1.2rem;line-height:1.5;white-space:nowrap;color:var(--ink)}
-  .t-sub{font-size:.86rem;font-weight:700;color:var(--text)}
-  .t-sub b{color:var(--maroon)}
+  .t-sub{font-size:clamp(.72rem,3.5vw,.86rem);font-weight:700;color:var(--text);white-space:nowrap}
+  .t-sub b{color:var(--maroon);white-space:nowrap}
   .t-id{font-size:.74rem;font-weight:700;color:var(--muted);text-align:right;letter-spacing:.01em}
   .t-go{margin-right:auto;width:36px;height:36px;border-radius:50%;background:var(--maroon);color:var(--cream-2);display:grid;place-items:center;flex:none}
   .t-go svg{width:18px;height:18px}
@@ -153,6 +153,12 @@
     margin:0 18px;padding:11px 0 14px;border-top:1px dashed var(--rule);
     display:flex;align-items:center;gap:9px;font-size:.86rem;font-weight:700;color:var(--text);
   }
+  .t-note{margin:0 18px 12px;padding:10px 12px;display:flex;gap:9px;align-items:flex-start;background:var(--cream);border:1px solid rgba(122,21,24,.25);border-radius:12px;font-size:.84rem;font-weight:500;line-height:1.75;color:var(--text)}
+  .nw{white-space:nowrap}
+  .t-top>div:nth-child(2){min-width:0}
+  .t-id{font-size:clamp(.64rem,3vw,.74rem)!important;overflow-wrap:anywhere}
+  .t-note svg{width:18px;height:18px;flex:none;color:var(--maroon);margin-top:3px}
+  .t-note b{color:var(--maroon);font-weight:700;white-space:nowrap}
   .dot{width:10px;height:10px;border-radius:50%;flex:none;background:#c9b49a}
   .dot.on{background:#1f8f52;box-shadow:0 0 0 0 rgba(31,143,82,.6);animation:pulse 2s infinite}
   .dot.off{background:var(--maroon)}
@@ -212,8 +218,9 @@
   .who{margin-top:26px;text-align:center}
   .who h3{font-family:var(--title);font-weight:800;font-size:1.15rem;color:var(--ink)}
   .who p{color:var(--text);font-size:.95rem;line-height:2.1;margin-top:4px}
+  .who b{white-space:nowrap}
   .who b{color:var(--ink);font-weight:700}
-  .who i{font-style:normal;color:var(--gold);padding:0 6px;font-size:.7em}
+  .who i{font-style:normal;color:var(--gold);padding:0 2px;font-size:.7em}
 
   /* ---------- نماد ---------- */
   .enamad{display:flex;align-items:center;gap:14px;margin-top:22px;padding:14px 16px;text-decoration:none;color:var(--ink)}
@@ -289,10 +296,11 @@
       </div>
       <div>
         <div class="t-title">سفارش در ربات بله</div>
-        <div class="t-sub">هر روز از ساعت <b>۱۴:۰۰</b> تا <b>۲۲:۰۰</b></div><div class="t-id" dir="ltr">@onlinejudicialservices_bot</div>
+        <div class="t-sub">هر روز <span class="nw">از ساعت <b>۱۴:۰۰</b> تا <b>۲۲:۰۰</b></span></div><div class="t-id" dir="ltr">@onlinejudicialservices_bot</div>
       </div>
       <span class="t-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span>
     </div>
+    <div class="t-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>موارد خود را حتی <b>خارج از ساعت کاری</b> نیز می‌توانید ثبت کنید؛ نتیجه در ساعت <b>۱۴:۰۰</b> به شما تحویل می‌گردد.</span></div>
     <div class="t-bot"><span class="dot" id="dot"></span><span id="st">در حال بررسی وضعیت</span></div>
   </a>
 
@@ -347,19 +355,6 @@
 
     <details>
       <summary>
-        <span class="g-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5z"/><path d="M7 10.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-5.5"/></svg></span>
-        <span><span class="g-t">امور وکلا و کانون</span><span class="g-n">۳ خدمت</span></span>
-        <span class="plus" aria-hidden="true"></span>
-      </summary>
-      <ul>
-        <li>انجام کلیه روند تمدید پروانه وکالت</li>
-        <li>انجام امور اتوماسیون کانون‌های مربوطه وکلا</li>
-        <li>انجام امور مربوط به وکلا، کارشناسان رسمی دادگستری، اشخاص حقوقی، بانک‌ها و ایرانیان داخل و خارج از کشور</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>
         <span class="g-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h8"/></svg></span>
         <span><span class="g-t">ارزش منطقه‌ای و تمبر مالیاتی</span><span class="g-n">۲ خدمت</span></span>
         <span class="plus" aria-hidden="true"></span>
@@ -379,7 +374,7 @@
   <!-- مخاطبان -->
   <section class="who">
     <h3>در خدمت</h3>
-    <p><b>وکلای دادگستری</b><i>◆</i><b>کارشناسان رسمی دادگستری</b><i>◆</i><b>بانک‌ها</b><i>◆</i><b>اشخاص حقوقی</b><i>◆</i><b>ایرانیان داخل و خارج از کشور</b></p>
+    <p><b>وکلای دادگستری</b>&nbsp;<i>◆</i> <b>کارشناسان رسمی دادگستری</b>&nbsp;<i>◆</i> <b>بانک‌ها</b>&nbsp;<i>◆</i> <b>اشخاص حقوقی</b>&nbsp;<i>◆</i> <b>ایرانیان داخل و خارج از کشور</b></p>
   </section>
 
   <!-- نماد اعتماد -->
